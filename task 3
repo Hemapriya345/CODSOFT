@@ -1,0 +1,22 @@
+import string
+import random
+length = int(input("ENTER PASSWORD LENGTH:"))
+print("CHOOSE CHARACTER SET FOR PASSWORD FROM THESE: 1. LETTER\n 2. DIGIT\n 3. SPECIAL CHARACTERS\n 4. EXIT\n")
+characterlist = " "
+while(True):
+  choice = int(input("PICK A NUMBER"))
+  if(choice == 1):
+    characterlist += string.ascii_letters
+  elif(choice == 2):
+    characterlist += string.digits
+  elif(choice == 3):
+    characterlist += string.punctuation
+  elif(choice == 4):
+    break
+  else:
+    print("PLEASE PICK A VALID OPTION!")
+password = []
+for i in range(length):
+  randomchar = random.choice(characterlist)
+  password.append(randomchar)
+print("THE RANDOM PASSWORD IS "+"".join(password))
